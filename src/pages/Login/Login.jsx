@@ -1,24 +1,69 @@
 import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
+import { login, signup } from "../../firebase";
+import netflix_spinner from "../../assets/netflix_spinner.gif";
 
 const Login = () => {
-  const [signState, setSignState] = useState("Sign Up");
-  return (
+  const [signState, setSignState] = useState("Sign In");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
+    }
+    setLoading(false);
+  };
+
+  return loading ? (
+    <div className="loading-img">
+      <img src={netflix_spinner} alt="" />
+    </div>
+  ) : (
     <div className="login">
       <img src={logo} alt="" />
       <div className="login-form">
         <h1>{signState}</h1>
         <form>
           {signState === "Sign Up" ? (
-            <input type="text" placeholder="Your Name" />
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
           ) : (
             <></>
           )}
 
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button>{signState}</button>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
+          <button type="submit" onClick={handleSubmit}>
+            {signState}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />

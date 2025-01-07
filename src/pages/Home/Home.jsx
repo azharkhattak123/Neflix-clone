@@ -23,10 +23,12 @@ const Home = () => {
           </p>
           <div className="hero-btns">
             <button className="btn">
-              <img src={play_icon} alt="" /> Play
+              <img src={play_icon} alt="" />
+              Play
             </button>
             <button className="btn info-btn">
-              <img src={info_icon} alt="" /> More info
+              <img src={info_icon} alt="" />
+              More info
             </button>
           </div>
 
