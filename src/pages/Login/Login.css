@@ -80,3 +80,71 @@
 .loading-img img{
     width: 70px;
 }
+
+/* Tab responsive*/
+
+@media only screen and  (max-width:1024px){
+    .login{
+        padding: 25px 4%;
+    }
+    .login-form {
+        max-width: 650px;
+        padding: 60px;
+        margin: auto;
+        margin-top: 35px;
+    }
+    .login-form h1 {
+        font-size: 40px;
+        margin-bottom: 35px;
+        font-weight: 800;
+    }
+    .login-form input {
+        height: 65px;
+        margin: 25px 0;
+        padding: 30px 23px;
+        font-size: 30px;
+    }
+    .login-form button {
+        padding: 18px;
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .form-help {
+        font-size: 22px;
+    }
+    .form-switch p{
+        font-size: 25px;
+    }
+}
+
+/* Mobile responsive */
+@media only screen and  (max-width:500px){
+    .login{
+        padding: 30px 4%;
+    }
+    .login-form {
+        padding: 35px;
+    }
+    .login-form h1 {
+        font-size: 35px;
+        margin-bottom: 20px;
+        font-weight: 800;
+    }
+    .login-form input {
+        height: 50px;
+        margin: 20px 0;
+        padding: 25px 16px;
+        font-size: 25px;
+    }
+    .login-form button {
+        padding: 10px;
+        font-size: 25px;
+        margin-top: 16px;
+    }
+    .form-help {
+        font-size: 18px;
+    }
+    .form-switch p{
+        font-size: 20px;
+    }
+}

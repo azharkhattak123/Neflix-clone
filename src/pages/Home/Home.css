@@ -67,3 +67,26 @@
 .more-cards{
     padding-left: 4%;
 }
+
+@media only screen and (max-width:1024px){
+    .hero-caption .title-cards{
+        display: none;
+    }
+    .hero-btns{
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .hero-caption img{
+        display: none;
+    }
+    .btn img{
+        width: 14px;
+    }
+    .btn{
+        padding: 4px 10px;
+        gap: 5px;
+        font-size: 10px;
+    }
+}
